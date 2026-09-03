@@ -1,4 +1,4 @@
-public class Challenges {
+public class Challenges1 {
     public static void main(String[] args) {
         //Challenge 1
         System.out.println("Challenge - Hello World");
