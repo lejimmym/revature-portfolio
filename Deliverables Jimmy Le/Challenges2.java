@@ -9,8 +9,8 @@ public class Challenges2 {
         Scanner scan = new Scanner(System.in);
         int choice = -1;
         while(true) {
-            System.out.printf("1. Challenge - Calculate 5 Test Scores\n" +
-                    "2. Challenge - REPL\n" +
+            System.out.print("1. Challenge - Calculate 5 Test Scores\n" +
+                    "2. Challenge - REPL Banking\n" +
                     "0. Exit\n" +
                     "Select Challenge: ");
             choice = scan.nextInt();
@@ -20,6 +20,8 @@ public class Challenges2 {
                         "Goodbye...");
                 break;
             }
+
+            //A grading calculator that compares and averages 5 scores. It forces an input value between 0 and 100
             if (choice == 1){
                 System.out.println("\nSelected: Challenge - Calculate 5 Test Scores\n" +
                         "Input 5 Test Scores:");
@@ -64,9 +66,53 @@ public class Challenges2 {
                         score[3], grade[3],
                         score[4], grade[4]);
             }
+            //A simple banking app with simple checks, ensuring not deposits or withdrawals of negative values as well as checking balance before withdrawing.
             if (choice == 2){
-                System.out.println("\nSelected: Challenge - REPL");
-                
+                System.out.println("\nSelected: Challenge - REPL Banking");
+                int choice2 = -1;
+                double balance = 0;
+                while(true) {
+                    System.out.printf("1. Check Balance\n" +
+                            "2. Deposit\n" +
+                            "3. Withdraw\n" +
+                            "0. Exit\n" +
+                            "Select Option: ");
+                    choice2 = scan.nextInt();
+                    if (choice2 == 0){
+                        System.out.println("\nSelected: Exit");
+                        break;}
+                    if (choice2 == 1){
+                        System.out.printf("%nSelected: Check Balance%n" +
+                                "Current Balance: %.2f%n%n", balance);
+                    }
+                    if (choice2 == 2) {
+                        System.out.print("\nSelected: Deposit\n" +
+                                "Amount: ");
+                        int amount = scan.nextInt();
+                        if (amount < 0) {System.out.println("Cannot deposit a negative amount.\n");}
+                        else {
+                            balance += amount;
+                            System.out.printf("Deposit complete%n" +
+                                    "New Balance: %.2f%n%n", balance);
+                        }
+                    }
+                    if (choice2 == 3) {
+                        System.out.print("\nSelected: Withdraw\n" +
+                                "Amount: ");
+                        int amount = scan.nextInt();
+                        if (amount < 0) {System.out.println("Cannot withdraw a negative amount.\n");}
+                        else if (balance < amount) {
+                            System.out.println("Insufficient funds. Transaction failed\n");
+                            System.out.printf("Current Balance: %.2f%n", balance);
+                        }
+                        else{
+                        balance -= amount;
+                        System.out.printf("Withdraw complete%n" +
+                                "New Balance: %.2f%n%n", balance);
+                        }
+                    }
+                }
+                System.out.println("Returning...\n\n");
             }
         }
     }
