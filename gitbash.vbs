@@ -1,0 +1,2 @@
+Set shell = CreateObject("WScript.Shell")
+shell.Run """C:\Program Files\Git\git-bash.exe"" --cd=""" & CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & """", 1, False
