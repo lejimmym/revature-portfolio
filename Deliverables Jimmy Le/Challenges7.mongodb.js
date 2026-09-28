@@ -67,6 +67,23 @@ db.products.insertOne([
     }
 ])
 
+use("gadgetStore")
+db.products.updateOne(
+    {
+        name: "Wireless Mouse"
+    },
+    {
+        $set: {
+            category: "Accessories"
+        }
+    }
+)
+
+
 
 use("gadgetStore")
 db.getCollectionInfos({ name: "products" })
+
+use("gadgetStore")
+
+db.products.find({ name: "Wireless Mouse" })
