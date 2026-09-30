@@ -1,0 +1,57 @@
+Hibernate Notes 9/30/2026
+Hibernate is a framework for saving /persisting java object
+
+Objelct-Relational Mapping
+Essentially turns tables into objects. POJO
+Productivity boost: Allows us to avoid SQL and JDBC boiler plates.
+Built-in Caching: Has a lvl 1 cache and optional lvl 2 cache
+
+POJO plain old java object
+Can take a POJO and work with/change them.
+
+JPA Jakarta Persistnece API. AKA Java pers API
+Standard API for ORM
+
+Spring can automatically figure out which JDBC driver is necessary.
+
+ENTTIY MANAGER vs JPAREPO
+ENTMAN Low level JPA api for direcetly managing enttities
+JPAREPO a spring abstraction. Ready made repo with CRUD and more features
+
+ENTMAN is granular you can adjust minute details
+JPAREPO is about convenience.
+
+JPQL java persistence query language
+HQL hibernate query language
+
+Typical Stack.. High lvl
+Spring Data JPA -> Jpa Repo -> 
+Ent Man -> Hibernate -> Session -> Database
+
+
+SQL vs JPQL
+SQL
+SELECT *
+FROM students
+ORDER BY id;
+
+JPQL example:
+SELECT studnet
+FROM Student Student
+ORDER BY student.id
+
+Because we are directly querying against our entitty
+
+Stereo type anno..
+@Component
+@Service
+@Repositroy
+@RestController
+
+General VSC notes:
+Ctrl + '.' period
+opens up a menu to generte things like constructors getters and setters
+
+
+Be aware of major http methods
+QC: Potentency
